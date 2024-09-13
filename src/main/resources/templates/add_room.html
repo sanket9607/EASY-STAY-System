@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeLeaf.org" th:replace="base::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooms Details</title>
+</head>
+<body>
+
+	<section>
+		<div class="page-wrapper">
+            <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-7 align-self-center">
+                        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Add Rooms</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+
+                <form th:action="@{room_added}" method="POST">
+
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Room Number</h4>
+                                        <div class="form-group">
+                                            <input type="text" name="room_no" placeholder="Enter Room Number" id="room_no" class="form-control" required>
+                                        </div>         
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Room Type</h4>
+                                        <div class="form-group mb-4">
+                                            <select class="custom-select mr-sm-2" id="room_type" name="room_type" required="required">
+                                                <option value="Standard">Standard</option>
+                                                <option value="Deluxe">Deluxe</option>
+                                                <option value="Super Deluxe">Super Deluxe</option>
+                                            </select>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Total Fees</h4>
+                                        <div class="form-group">
+                                            <input type="text" name="room_fees" id="room_fees" placeholder="Enter Total Fees" required="required" class="form-control">
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">No. Of Student</h4>
+                                        <div class="form-group">
+                                            <input type="text" name="no_of_students" id="no_of_students" placeholder="Enter No of Students" required="required" class="form-control">
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                
+                    <div class="form-actions">
+                    	<div class="text-center">
+                        	<button type="submit" name="submit" class="btn btn-success">Insert</button>
+                          	<button type="reset" class="btn btn-danger">Reset</button>
+                      	</div>
+                  	</div>
+                
+                </form>	
+            </div>
+        </div>
+	</section>
+    
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeLeaf.org" th:replace="base::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login</title>
+</head>
+<body>
+
+	<section>
+			
+		<div class="page-wrapper">
+			<div th:if="${msg}" th:classappend="${msg.type}" class="alert" role="alert">
+			  	<th:block th:text="${msg.content}"/>
+			  	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			    	<span aria-hidden="true">&times;</span>
+			  	</button>
+			</div>
+			
+			<div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-7 align-self-center">
+                        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Registration Form</h4>
+                    </div>
+                </div>
+            </div>
+			
+			<div class="container-fluid mr-3">
+				<div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+					<div class="card-body p-4 p-md-5">
+			            <form>
+			            	<div class="form-row">
+			            		<div class="col-md-6 mb-4">
+						      		<label for="room_no" style="font-weight:450; font-size:18px">Room No.</label>
+						      		<input type="number" name="room_no" id="room_no" class="form-control" placeholder="Enter Room No." style="box-shadow: inset 0 1px 3px 0 rgba(0,0,0,.08); background: #fafafa;" required>
+						    	</div>
+						    	<div class="col-md-6 mb-4">
+						     		<label for="starting_date" style="font-weight:450; font-size:18px">Start Date</label>
+						      		<input type="date" name="starting_date" id="starting_date" class="form-control" style="box-shadow: inset 0 1px 3px 0 rgba(0,0,0,.08); background: #fafafa;" required>
+						    	</div>
+						  	</div>
+
+						  	<div class="form-row mt-4">
+						    	<div class="col-md-4 mb-4">
+						      		<label for="registration_no" style="font-weight:450; font-size:18px">Registration No.</label>
+						      		<input type="text" name="registration_no" id="registration_no" placeholder="Enter registration number" class="form-control" style="box-shadow: inset 0 1px 3px 0 rgba(0,0,0,.08); background: #fafafa;" required>
+						    	</div>
+						    	<div class="col-md-4 mb-4">
+						      		<label for="first_name" style="font-weight:450; font-size:18px">First name</label>
+						      		<input type="text" name="first_name" id="first_name" placeholder="Enter first name" class="form-control" style="box-shadow: inset 0 1px 3px 0 rgba(0,0,0,.08); background: #fafafa;" required>
+						    	</div>
+						    	<div class="col-md-4 mb-4">
+						      		<label for="last_name" style="font-weight:450; font-size:18px">Last name</label>
+						      		<input type="text" name="last_name" id="last_name" placeholder="Enter last name" class="form-control" style="box-shadow: inset 0 1px 3px 0 rgba(0,0,0,.08); background: #fafafa;"	 required>
+						    	</div>
+						  	</div>
+						  	<div class="form-row">
+						    	<div class="col-md-4 mb-4">
+						      		<label for="email" style="font-weight:450; font-size:18px">Email</label>
+	                                <input type="email" name="email" id="email" placeholder="Enter email address" class="form-control" style="box-shadow: inset 0 1px 3px 0 rgba(0,0,0,.08); background: #fafafa;" required>
+						    	</div>
+						    	<div class="col-md-4 mb-4">
+						      		<label for="gender" style="font-weight:450; font-size:18px">Gender</label>
+                                    <div class="form-group">
+	                                    <select name="gender" class="form-control" style="box-shadow: inset 0 1px 3px 0 rgba(0,0,0,.08); background: #fafafa;" required="required">
+	                                        <option value="male">Male</option>
+	                                        <option value="female">Female</option>
+	                                        <option value="others">Others</option>
+	                                    </select>
+                                    </div>						    	
+	                            </div>
+						    	<div class="col-md-4 mb-4">
+						      		<label for="contact_no" style="font-weight:450; font-size:18px">Contact No.</label>
+	                                <input type="number" name="contact_no" id="contact_no" placeholder="Enter contact number" class="form-control" style="box-shadow: inset 0 1px 3px 0 rgba(0,0,0,.08); background: #fafafa;" required>
+						    	</div>
+						  	</div>
+
+						  	<div class="form-row mt-1">
+						    	<div class="col-md-4 mb-4">
+						      		<label for="address" style="font-weight:450; font-size:18px">Address</label>
+                                	<input type="text" name="address" id="address" class="form-control" placeholder="Enter Address" style="box-shadow: inset 0 1px 3px 0 rgba(0,0,0,.08); background: #fafafa;" required>
+						    	</div>
+						    	<div class="col-md-4 mb-4">
+						      		<label for="city" style="font-weight:450; font-size:18px">City</label>
+                                    <input type="text" name="city" id="city" class="form-control" placeholder="Enter City Name" style="box-shadow: inset 0 1px 3px 0 rgba(0,0,0,.08); background: #fafafa;" required>
+						    	</div>
+						    	<div class="col-md-4 mb-4">
+						      		<label for="pincode" style="font-weight:450; font-size:18px">Postal Code</label>
+                                    <input type="text" name="pincode" id="pincode" class="form-control" placeholder="Enter Postal Code" style="box-shadow: inset 0 1px 3px 0 rgba(0,0,0,.08); background: #fafafa;" required>
+						    	</div>
+						  	</div>
+						  	
+						  	<button class="btn btn-primary" type="submit">Submit form</button>
+						</form>
+					</div>
+				</div>
+			</div>
+        </div>
+	</section>
+    
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeLeaf.org" th:replace="base::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student View</title>
+</head>
+<body>
+
+	<section>
+		<div class="page-wrapper">
+			<div th:if="${msg}" th:classappend="${msg.type}" class="alert" role="alert">
+			  	<th:block th:text="${msg.content}"/>
+			  	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			    	<span aria-hidden="true">&times;</span>
+			  	</button>
+			</div>
+            <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-7 align-self-center">
+                        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Student's Account</h4>
+                    </div>   
+                </div>
+            </div>
+
+            <div class="container-fluid">
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h6 class="card-subtitle">Displaying all the registered student's account.</h6>
+                                <div class="table-responsive">
+                                    <table id="zero_config" class="table table-striped table-hover table-bordered no-wrap">
+                                        <thead class="thead-dark">
+                                            <tr>
+                                                <th>Reg. No.</th>
+                                                <th>Student's Name</th>
+                                                <th>Room No.</th>
+                                                <th>Contact</th>
+                                                <th>Email</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        	<tr th:each="s : ${students}">
+	                                        <td th:text="${s.registration_no}"></td>
+	                                        <td th:text="${s.first_name}"></td>
+	                                        <td th:text="${s.room_no}"></td>
+	                                        <td th:text="${s.contact_no}"></td>
+	                                        <td th:text="${s.email}"></td>
+	                                        <td>
+                                                <form th:action="@{delete_student}" method="get">
+                                                	<input type="hidden" th:value="${s.registration_no}" name="s_id" id="s_id" />
+                                                	<button type="submit" title="Delete Record" style="border:0; border-radius:40px"><i class="icon-close" style="color:red;"></i></button>
+                                                </form>
+                                            </td>
+	                                        </tr>
+										</tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</section>
+    
+</body>
+</html>

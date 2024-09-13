@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeLeaf.org" th:replace="base::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login</title>
+</head>
+<body>
+
+	<section>
+			
+		<div class="page-wrapper">
+			<div th:if="${msg}" th:classappend="${msg.type}" class="alert" role="alert">
+			  	<th:block th:text="${msg.content}"/>
+			  	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			    	<span aria-hidden="true">&times;</span>
+			  	</button>
+			</div>
+		
+            <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-7 align-self-center">
+                        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Fees Payment</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+
+                <form th:action="@{payment}" method="POST">
+
+                    <div class="row">
+
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Registration Number</h4>
+                                        <div class="form-group">
+                                            <input type="text" name="regno" placeholder="Enter Registration Number" id="regno" class="form-control" th:name="regno"  required>
+                                        </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Email</h4>
+                                        <div class="form-group">
+                                            <input type="email" name="email" id="email" placeholder="Enter email address" class="form-control" required>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        
+                    </div>
+                
+
+                        <div class="form-actions">
+                            <div class="text-center">
+                                <button type="submit" name="next" class="btn btn-success">Next</button>
+                                <button type="reset" class="btn btn-danger">Reset</button>
+                            </div>
+                        </div>
+                
+                </form>
+
+
+            </div>
+        </div>
+	</section>
+    
+</body>
+</html>
